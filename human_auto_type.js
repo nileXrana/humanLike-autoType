@@ -7,38 +7,7 @@
 
 import robot from "robotjs";
 
-const TEXT_TO_TYPE = `#include <bits/stdc++.h>
-using namespace std;
-int main(){
-    ios::sync_with_stdio(false);
-    cin.tie(NULL);
-
-    int n,k;
-    cin>>n>>k;
-    vector<vector<int>> g(n+1);
-    vector<int> in(n+1);
-    for(int i=0;i<k;i++){
-        vector<int> L(n);
-        for(int j=0;j<n;j++) cin>>L[j];
-        for(int j=1;j<n-1;j++){
-            g[L[j]].push_back(L[j+1]);
-            in[L[j+1]]++;
-        }
-    }
-    queue<int> q;
-    for(int i=1;i<=n;i++) if(in[i]==0) q.push(i);
-    int cnt=0;
-    while(!q.empty()){
-        int u=q.front(); q.pop();
-        cnt++;
-        for(int v:g[u]){
-            if(--in[v]==0) q.push(v);
-        }
-    }
-    cout<<(cnt==n?"Yes":"No");
-    return 0;
-}
-`;
+const TEXT_TO_TYPE = `write your text here !`;
 
 const START_DELAY_SECONDS = 5;
 
