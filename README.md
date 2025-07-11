@@ -52,4 +52,4 @@ A Node.js script that types out a block of text in a human-like manner using [ro
   - Some applications may block simulated keystrokes for security reasons.
 
 ## License
-MIT 
+MIT LICENSE
