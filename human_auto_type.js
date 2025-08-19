@@ -7,7 +7,20 @@
 
 import robot from "robotjs";
 
-const TEXT_TO_TYPE = `write your text here !`;
+const TEXT_TO_TYPE = `public static void fizzBuzz(int n) {
+    for (int i = 1; i <= n; i++) {
+        if (i % 3 == 0 && i % 5 == 0) {
+            System.out.println("FizzBuzz");
+        } else if (i % 3 == 0) {
+            System.out.println("Fizz");
+        } else if (i % 5 == 0) {
+            System.out.println("Buzz");
+        } else {
+            System.out.println(i);
+        }
+    }
+}
+`;
 
 const START_DELAY_SECONDS = 5;
 
@@ -38,13 +51,13 @@ async function humanType(text) {
 
       let delay;
       if (char === ' ' || char === '\t') {
-        delay = randomBetween(20, 50);
+        delay = randomBetween(200, 400);
       } else {
-        delay = randomBetween(50, 80);
+        delay = randomBetween(300, 600);
       }
 
       if (',.;:!?{}()[]'.includes(char)) {
-        delay += randomBetween(50, 80);
+        delay += randomBetween(200, 400);
       }
 
       await sleep(delay);
