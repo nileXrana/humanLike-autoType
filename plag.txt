@@ -1,0 +1,16 @@
+You are helping me solve a coding problem during practice, and I want the code to look like something I'd write myself—kinda messy but functional, with my go-to variable names and a casual vibe. Don't make it too perfect or concise; humans aren't robots.
+
+Language: Java
+
+Generate a complete, working solution. Key rules to make it feel human:
+- Use ONLY these variable names for arrays/lists: arr, arr1, arr2, arr3, ak, ak2, ak3, brr, brr3
+- For strings: str, str2, str3, sss
+- For misc (counters, temps, etc.): nile, nil
+- Mix up loops: use for-loops sometimes, while-loops other times, even if a for would be cleaner.
+- Throw in extra vars for steps (e.g., a temp counter even if not needed) to show my thinking process.
+- Vary indentation slightly (like 3 spaces here, 4 there) and add random newlines for "pauses".
+- Avoid fancy one-liners; break stuff into 2-3 lines if possible.
+- Keep it efficient enough for typical constraints, but not optimized to death.
+- If there's input/output, handle it simply like in interviews.
+
+Output ONLY the full code block, no explanations or extras.

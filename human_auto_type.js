@@ -7,19 +7,34 @@
 
 import robot from "robotjs";
 
-const TEXT_TO_TYPE = `public static void fizzBuzz(int n) {
-    for (int i = 1; i <= n; i++) {
-        if (i % 3 == 0 && i % 5 == 0) {
-            System.out.println("FizzBuzz");
-        } else if (i % 3 == 0) {
-            System.out.println("Fizz");
-        } else if (i % 5 == 0) {
-            System.out.println("Buzz");
-        } else {
-            System.out.println(i);
-        }
+const TEXT_TO_TYPE = `#include <bits/stdc++.h>
+using namespace std;
+
+vector<long long> solution(int rows, int cols, vector<vector<int>> black) {
+    unordered_map<long long,int> cnt;
+    cnt.reserve(black.size()*4 + 10);
+    for (auto &b : black) {
+        int r = b[0], c = b[1];
+        for (int dr = -1; dr <= 0; ++dr)
+            for (int dc = -1; dc <= 0; ++dc) {
+                int ur = r + dr, uc = c + dc;
+                if (ur < 0 || uc < 0 || ur >= rows-1 || uc >= cols-1) continue;
+                long long key = (long long)ur * cols + uc;
+                ++cnt[key];
+            }
     }
+
+    vector<long long> ans(5, 0);
+    for (auto &p : cnt) {
+        int k = p.second; // number of black cells in that 2x2
+        if (k >= 1 && k <= 4) ans[k]++;
+    }
+    long long total = (long long)(rows - 1) * (cols - 1);
+    long long sum = ans[1] + ans[2] + ans[3] + ans[4];
+    ans[0] = total - sum;
+    return ans;
 }
+
 `;
 
 const START_DELAY_SECONDS = 5;
